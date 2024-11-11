@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     const data = Object.fromEntries(formData.entries()); // Convertir a objeto
 
     try {
-        const response = await fetch('http://localhost:8080/clientes/login', {
+        const response = await fetch('https://ecommerce-bytebusters-production.up.railway.app/clientes/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

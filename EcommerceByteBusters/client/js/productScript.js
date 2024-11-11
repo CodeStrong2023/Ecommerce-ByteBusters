@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         // Solicitar los productos al backend
-        const response = await fetch('http://localhost:8080/clientes/products');
+        const response = await fetch('https://ecommerce-bytebusters-production.up.railway.app/clientes/products');
         if (response.ok) {
             const products = await response.json();
             const tableBody = document.querySelector('#productosTable tbody');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 // Función para editar un producto
 function editProduct(id, productName, price, quanty, img) {
     // Solicitar los datos del producto desde el servidor
-    fetch(`http://localhost:8080/clientes/products/${id}`)
+    fetch(`https://ecommerce-bytebusters-production.up.railway.app/clientes/products/${id}`)
         .then(response => response.json())
         .then(product => {
             // Mostrar el formulario de edición
@@ -78,7 +78,7 @@ function editProduct(id, productName, price, quanty, img) {
         }
 
         try {
-            const response = await fetch(`http://localhost:8080/clientes/products/update/${id}`, {
+            const response = await fetch(`https://ecommerce-bytebusters-production.up.railway.app/clientes/products/update/${id}`, {
                 method: 'PUT',
                 body: formData
             });
@@ -104,7 +104,7 @@ function cancelEdit() {
 // Función para eliminar un producto
 async function deleteProduct(id) {
     try {
-        const response = await fetch(`http://localhost:8080/clientes/delete/${id}`, {
+        const response = await fetch(`https://ecommerce-bytebusters-production.up.railway.app/clientes/delete/${id}`, {
             method: 'DELETE',
         });
 

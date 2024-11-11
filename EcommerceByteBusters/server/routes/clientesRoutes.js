@@ -1,6 +1,6 @@
 import express from "express";
 import pool from "../db/dbConnections.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import config from "../../config.js";
 import multer from 'multer';
@@ -171,8 +171,8 @@ router.delete("/deleteUser/:id", async (req, res) => {
 // Crear un producto
 router.post('/add', upload.single('img'), async (req, res) => {
     const { productName, price, quanty } = req.body;
-    const defaultImgPath = '/assets/default.jpg'; // Ruta de la imagen por defecto
-    const imgPath = req.file ? `/uploads/${req.file.filename}` : '/uploads/ByteBustersIcon.png'; // Guardar la ruta de la imagen o usar la imagen por defecto
+    const defaultImgPath = 'assets/default.jpg'; // Ruta de la imagen por defecto
+    const imgPath = req.file ? `uploads/${req.file.filename}` : 'uploads/ByteBustersIcon.png'; // Guardar la ruta de la imagen o usar la imagen por defecto
 
     try {
         const [result] = await pool.query(
@@ -194,7 +194,7 @@ router.get('/products', async (req, res) => {
         const [products] = await pool.query("SELECT * FROM productos");
         const productsWithImageURL = products.map(product => ({
             ...product,
-            img: `http://localhost:8080${product.img}`  // Asegúrate de que esta sea la ruta correcta
+            img: `https://ecommerce-bytebusters-production.up.railway.app/${product.img}`  // Asegúrate de que esta sea la ruta correcta
         }));
         res.status(200).json(productsWithImageURL);
     } catch (err) {

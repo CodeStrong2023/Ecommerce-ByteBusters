@@ -3,7 +3,7 @@ const cart = []; // Carrito. Array vacío
 
 async function fetchProducts() {
     try {
-        const response = await fetch('http://localhost:8080/clientes/products');
+        const response = await fetch('https://ecommerce-bytebusters-production.up.railway.app/clientes/products');
         const products = await response.json();
 
         displayProductsIndex(products);
@@ -16,7 +16,7 @@ function displayProductsIndex(products) {
     products.forEach(product => {
         const content = document.createElement("div");
         content.className = "card";
-        const defaultImg = "../assets/ByteBustersIcon.png"; // Ruta de la imagen por defecto
+        const defaultImg = "https://ecommerce-bytebusters-production.up.railway.app/assets/ByteBustersIcon.png"; // Ruta de la imagen por defecto
         const productImg = product.img ? product.img : defaultImg;
 
         content.innerHTML = `

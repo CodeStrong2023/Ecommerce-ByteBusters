@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         // Obtener los productos desde el backend
-        const response = await fetch('http://localhost:8080/clientes/products');
+        const response = await fetch('https://ecommerce-bytebusters-production.up.railway.app/clientes/products');
         if (response.ok) {
             const products = await response.json();
             const tableBody = document.querySelector('#productosTable tbody');
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 const addToCart = (productId) => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    fetch(`http://localhost:8080/clientes/products/${productId}`)
+    fetch(`https://ecommerce-bytebusters-production.up.railway.app/clientes/products/${productId}`)
         .then(response => response.json())
         .then(product => {
             const existingProduct = cart.find(item => item.id === productId);

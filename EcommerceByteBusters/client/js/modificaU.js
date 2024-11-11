@@ -17,7 +17,7 @@ document.getElementById("modificarUsuarioForm").addEventListener("submit", async
     if (password) data.password = password;
 
     try {
-        const response = await fetch(`http://localhost:8080/clientes/modificar/${userId}`, {
+        const response = await fetch(`https://ecommerce-bytebusters-production.up.railway.app/clientes/modificar/${userId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -49,7 +49,7 @@ document.getElementById("eliminarCuenta").addEventListener("click", async () => 
     if (!confirmacion) return;
 
     try {
-        const response = await fetch(`http://localhost:8080/clientes/deleteUser/${userId}`, {
+        const response = await fetch(`https://ecommerce-bytebusters-production.up.railway.app/clientes/deleteUser/${userId}`, {
             method: "DELETE",
         });
 

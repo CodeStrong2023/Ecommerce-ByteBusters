@@ -125,7 +125,7 @@ const displayCart = async () => {  // Cambia aquí a async
                     price: total,
                 };
 
-                const response = await fetch("http://localhost:8080/create_preference", {
+                const response = await fetch("https://ecommerce-bytebusters-production.up.railway.app/create_preference", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

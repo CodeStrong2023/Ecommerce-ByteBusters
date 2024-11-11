@@ -18,7 +18,7 @@ async function obtenerDatosCuenta() {
             return;
         }
         // Realiza la solicitud fetch
-        const response = await fetch(`http://localhost:8080/clientes/mostrar/${clienteId}`, {
+        const response = await fetch(`https://ecommerce-bytebusters-production.up.railway.app/clientes/mostrar/${clienteId}`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`,

@@ -8,7 +8,7 @@ document.getElementById('addProductForm').addEventListener('submit', async funct
     formData.append('img', document.getElementById('img').files[0]); // Cargar la imagen
 
     try {
-        const response = await fetch('http://localhost:8080/clientes/add', {
+        const response = await fetch('https://ecommerce-bytebusters-production.up.railway.app/clientes/add', {
             method: 'POST',
             body: formData
         });
