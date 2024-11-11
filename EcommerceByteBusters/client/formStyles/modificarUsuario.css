@@ -9,15 +9,15 @@
 }
 
 body {
-    font-family: Montserrat;
-    background-color: var(--color-background);
-    color: var(--color-text);
+    font-family: 'Arial', sans-serif;
+    background-color: var(--box-shadow-color); /* Fondo claro */
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-   
-}
+    flex-direction: column;
+  }
 
 /* Header Styles */
 header {
@@ -67,27 +67,28 @@ header {
 
 .section{
     width: 100%;
-    height: 600px;
     background-color: rgb(218, 216, 216);
     display: flex;
     justify-content: center;
 }
 
 .informacion-conteiner{ 
-    width: 470px;
-    height: 500px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 70px;
     background-color: rgb(240, 240, 240);
-    margin-top: 20px;
     border-radius: 10px;
     box-shadow:  0px 10px 20px rgba(0, 0, 0, 0.438);
 }
 
 .titulo{
     width: 100%;
-    height: 80px;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .titulo p{
@@ -109,6 +110,8 @@ header {
 }
 
 .contenedor-register input{
+    display: flex;
+    flex-direction: row;
     margin: 13px 30px;
     padding: 8px 10px;
     font-size: 15px;
@@ -122,23 +125,16 @@ header {
 
 
 .contenedor-button{
-    width: 100%;
+    width: 50%;
     height: 70px;
     display: flex;
     text-decoration: none;
+    width: auto;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 .contenedor-button button{
-    margin: auto;
-    padding: 11px 115px;
-    font-size: 17px;
-    font-weight: 400;
-    font-family: Montserrat;
-    border-radius: 8px;
-    background-color: rgb(224, 71, 10);
-    border: none;
-    color: white;
-    text-shadow: 0 0 1px white;
-    transition: all 300ms;
+    
 }
 
 

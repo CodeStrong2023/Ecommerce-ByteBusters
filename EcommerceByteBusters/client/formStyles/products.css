@@ -10,14 +10,15 @@
 
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    margin: 0;
-    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--box-shadow-color); /* Fondo claro */
     display: flex;
-    flex-direction: column;
     align-items: center;
-}
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    
+  }
 header {
     background-color: var(--color-secondary);
     padding: 20px;

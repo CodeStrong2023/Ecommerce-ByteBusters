@@ -9,11 +9,14 @@
 }
 html,
 body {
-    height: 100%;
-    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--box-shadow-color); /* Fondo claro */
     display: flex;
+    align-items: center;
+    margin: 0;
     flex-direction: column;
-}
+    
+  }
 
 /* Header Styles */
 header {

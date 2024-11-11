@@ -41,7 +41,7 @@ async function createTables() {
             CREATE TABLE IF NOT EXISTS clientes (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 rol VARCHAR(50),
-                usuario VARCHAR(50) NOT NULL,
+                usuario VARCHAR(255) NOT NULL,
                 password VARCHAR(255) NOT NULL,
                 telefono VARCHAR(20),
                 email VARCHAR(100) NOT NULL

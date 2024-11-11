@@ -121,14 +121,19 @@ router.put("/modificar/:id", async (req, res) => {
     const { usuario, password, telefono, email } = req.body;
 
     try {
-        let query = `UPDATE clientes SET usuario = ?, telefono = ?, email = ? WHERE id = ?`;
-        const values = [usuario, telefono, email, id];
+        let query;
+        let values;
 
         if (password) {
+            // Si hay un password nuevo, lo encriptamos y lo incluimos en la consulta
             const saltRounds = 10;
             const hashedPassword = await bcrypt.hash(password, saltRounds);
             query = `UPDATE clientes SET usuario = ?, password = ?, telefono = ?, email = ? WHERE id = ?`;
-            values.unshift(hashedPassword);
+            values = [usuario, hashedPassword, telefono, email, id];
+        } else {
+            // Si no se envía password, actualizamos solo los otros campos
+            query = `UPDATE clientes SET usuario = ?, telefono = ?, email = ? WHERE id = ?`;
+            values = [usuario, telefono, email, id];
         }
 
         const [result] = await pool.execute(query, values);
@@ -143,8 +148,9 @@ router.put("/modificar/:id", async (req, res) => {
     }
 });
 
+
 // Ruta para eliminar un cliente
-router.delete("/:id", async (req, res) => {
+router.delete("/deleteUser/:id", async (req, res) => {
     const { id } = req.params;
     try {
         const [result] = await pool.execute(`DELETE FROM clientes WHERE id = ?`, [id]);
