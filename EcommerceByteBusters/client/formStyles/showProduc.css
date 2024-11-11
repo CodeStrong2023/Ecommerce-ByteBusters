@@ -9,14 +9,11 @@
 }
 html,
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--box-shadow-color); /* Fondo claro */
-    display: flex;
-    align-items: center;
+    height: 100%;
     margin: 0;
+    display: flex;
     flex-direction: column;
-    
-  }
+}
 
 /* Header Styles */
 header {
@@ -141,3 +138,31 @@ footer {
     margin-top: auto;
     /* Mueve el footer al fondo */
 }
+ /* Media query para dispositivos móviles */
+ @media (max-width: 600px) {
+    form {
+      width: 90%;
+      padding: 15px;
+    }
+    * {
+        align-items: center;
+        justify-items: center;
+    }
+    .logo-container img {
+        width: 100%;
+    }
+  
+    h1, h2 {
+      font-size: 1.5rem;
+    }
+  
+    button, h2 button {
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+  }
+  

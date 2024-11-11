@@ -7,7 +7,6 @@
     --color-hover-primary: #e55b00;
     --box-shadow-color: rgba(0, 0, 0, 0.1);
 }
-html,
 body {
     font-family: 'Arial', sans-serif;
     background-color: var(--box-shadow-color); /* Fondo claro */
@@ -201,3 +200,31 @@ footer {
     padding: 10px;
     margin-top: auto;
 }
+/* Media query para dispositivos móviles */
+@media (max-width: 600px) {
+    form {
+      width: 90%;
+      padding: 15px;
+    }
+    * {
+        align-items: center;
+        justify-items: center;
+    }
+    .logo-container img {
+        width: 100%;
+    }
+  
+    h1, h2 {
+      font-size: 1.5rem;
+    }
+  
+    button, h2 button {
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+  }
+  

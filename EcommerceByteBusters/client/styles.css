@@ -65,6 +65,7 @@ body {
 /* Banner Styles */
 .banner {
     display: flex;
+    width: 100%;
     flex-direction: row;
     justify-content:center;
     align-items: center;
@@ -72,10 +73,12 @@ body {
     background-color: var(--color-primary);
     color: white;
     height: fit-content;
+    
 }
 
 .banner-text {
     flex: 1;
+    padding-left: 70px;
 }
 
 .banner-text h1 {
@@ -87,6 +90,7 @@ body {
     flex: 1;
     max-width: 450px;
     text-align: right;
+    padding-right: 40px;
 }
 
 .banner-image img {
@@ -141,6 +145,7 @@ body {
 /* Contact Section */
 .contact {
     padding: 50px 20px;
+    width: 70%;
 }
 
 .contact h2 {
@@ -179,6 +184,7 @@ body {
 
 /* Footer Styles */
 footer {
+    width: 100%;
     background-color: var(--color-secondary);
     color: white;
     text-align: center;
@@ -532,3 +538,31 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+/* Media query para dispositivos móviles */
+@media (max-width: 600px) {
+    form {
+      width: 90%;
+      padding: 15px;
+    }
+    * {
+        align-items: center;
+        justify-items: center;
+    }
+    .logo-container img {
+        width: 100%;
+    }
+  
+    h1, h2 {
+      font-size: 1.5rem;
+    }
+  
+    button, h2 button {
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+  }
+  
