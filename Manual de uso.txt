@@ -1,0 +1,21 @@
+FORMA DE USO:
+
+La página tiene dos tipos de usuario: usuario con rol de vendedor y usuario común.
+
+El usuario con rol de VENDEDOR:
+-	Este usuario puede realizar puede agregar mercadería, eliminar o modificar
+los productos mostrados en la página y disponibles para comprar.
+-	El usuario VENDEDOR es otorgado por el equipo de desarrolladores a petición
+del adquirente del sitio.
+-	Por razones de seguridad, el rol VENDEDOR no puede ser asignado desde dentro
+de la aplicación.
+
+El usuario con rol COMÚN:
+-	El usuario con rol común puede crear un usuario nuevo para interactuar con 
+la página. El inicio de sesión crea un token y almacena el id de usuario por 1h, 
+de esta forma, el usuario común sólo podrá comprar y acceder a perfil si se ha
+iniciado sesión previamente.
+-	El usuario común podrá comprar cualquier elemento del catálogo mediante el
+cart implementado y el mecanismo de compra de 'MERCADO PAGO'.
+-	También podrá acceder a perfil para ver los datos ingresados y modificarlos
+de ser necesario.
